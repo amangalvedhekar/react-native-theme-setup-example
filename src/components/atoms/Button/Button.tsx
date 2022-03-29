@@ -4,7 +4,7 @@ import React from 'react';
 import {useTheme} from 'styled-components/native';
 export interface ButtonProps {
   text: string;
-  size?: 'big' | 'small',
+  size?: 'big' | 'small';
 }
 export function Button({text, size = 'big'}: ButtonProps) {
   const {colors} = useTheme();

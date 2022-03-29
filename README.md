@@ -12,11 +12,27 @@
 Fonts can be setup in static/dynamic way in react-native
   - Static Font Setup
     - Add fonts to `assets/fonts` folder in root folder
-    - Run `react-native link` to setup link with font files
-    - iOS specific
-      - Update `Info.plist`  `UIAppFonts` key with post script name of the fonts(PS. - file name may or maynot be same as post script name)
-      - in XCode `Build Phases` under `Copy Bundle Resources` add font files
+    - Create file `react-native.config.js` and add following to the file:
+       
+      ```javascript
+      module.exports = {
+      project: {
+      ios: {},
+      android: {},
+      },
+      assets: ['./assets/fonts'],
+      };
+
+      ```
+      - Run `react-native link` to set up link with font files
+      - iOS specific
+        - Update `Info.plist`  `UIAppFonts` key with post script name of the fonts(PS. - file name may or maynot be same as post script name)
+        - in XCode `Build Phases` under `Copy Bundle Resources` add font files
 
 ### Theme
 - Theme is provided to components using `ThemeProvider` from `styled-components`
 - Components can then access theme object either through `styled`, `useTheme`, `withTheme`
+
+### Theme Switching
+- React-native provides `useColorScheme` hook to access `Appearance` and user setup
+- ThemeProvider value is done fed with `useColorScheme` return value

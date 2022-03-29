@@ -11,6 +11,8 @@ import {theme} from './src/themes/lightTheme';
 import {darkTheme} from './src/themes/darkTheme';
 import {Text} from './src/components/atoms/Typography/Text';
 import {Button} from './src/components/atoms/Button/Button';
+import {TextInput} from './src/components/atoms/TextInput/TextInput';
+import {InputWithLabel} from './src/components/moluecules/FormElement/FormElement';
 
 const App = () => {
   const colorScheme = useColorScheme();
@@ -20,7 +22,9 @@ const App = () => {
       <ScrollView>
         <ThemeProvider theme={colorScheme === 'dark' ? darkTheme : theme}>
           <StatusBar />
-
+          <TextInput placeholder="useless placeholder" size="small" />
+          <TextInput placeholder="useless placeholder" />
+          <InputWithLabel />
           <Text textType="heading" textColor="disabled">
             The quick brown fox jumps over the lazy dog
           </Text>
@@ -100,7 +104,7 @@ const App = () => {
           <Text textType="light" textColor="success">
             The quick brown fox jumps over the lazy dog
           </Text>
-          <View style={{flex: 1, flexDirection: 'row', marginVertical: 16,}}>
+          <View style={{flex: 1, flexDirection: 'row', marginVertical: 16}}>
             <Button text="Add" size="small" />
             <Button text="Delete" size="small" />
           </View>
