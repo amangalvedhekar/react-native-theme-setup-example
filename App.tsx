@@ -24,7 +24,8 @@ const App = () => {
           <StatusBar />
           <TextInput placeholder="useless placeholder" size="small" />
           <TextInput placeholder="useless placeholder" />
-          <InputWithLabel />
+          <InputWithLabel label="Email" size="small" />
+          <InputWithLabel label="Email" />
           <Text textType="heading" textColor="disabled">
             The quick brown fox jumps over the lazy dog
           </Text>
